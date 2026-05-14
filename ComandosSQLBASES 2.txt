@@ -1,0 +1,94 @@
+DB-Links 
+
+SELECT owner, db_link, username, host
+FROM all_db_links;
+
+
+CONEXIONES A NODOS 
+
+sqlplus nodo_transacciones/123@100.91.196.123:1521/xepdb1
+sqlplus nodo_catalogo/123@100.95.8.16:1521/xepdb1
+
+
+MUESTRA DE VISTA 
+
+SELECT * FROM v_historial_detallado;
+SELECT *  FROM Detalle_Venta;  
+
+select * FROM V_PRODUCTOS_OPTIMIZADA
+select * from V_HISTORIAL_DETALLADO
+
+
+SELECT view_name
+FROM user_views;
+
+
+TABLAS
+
+SELECT * FROM Usuario;
+SELECT * FROM Producto;
+SELECT * FROM Cliente;
+SELECT * FROM Venta;
+
+
+
+FORMATOS 
+
+CLIENTE
+SET LINESIZE 200
+SET PAGESIZE 50
+
+COLUMN id_cliente FORMAT 999
+COLUMN nombre_completo FORMAT A25
+COLUMN telefono FORMAT A15
+COLUMN direccion FORMAT A35
+
+PRODUCTOS 
+SET LINESIZE 200
+SET PAGESIZE 50
+
+COLUMN id_producto FORMAT 999
+COLUMN nombre FORMAT A25
+COLUMN descripcion FORMAT A35
+COLUMN precio FORMAT 99999.99
+COLUMN stock FORMAT 9999
+
+SELECT * FROM producto;
+
+USUARIO
+SET LINESIZE 200
+SET PAGESIZE 50
+
+COLUMN id_usuario FORMAT 999
+COLUMN nombre_usuario FORMAT A20
+COLUMN contrasena FORMAT A20
+
+SELECT * FROM usuario;
+
+
+VENTAS
+SET LINESIZE 200
+SET PAGESIZE 50
+
+COLUMN id_venta FORMAT 999
+COLUMN fecha_venta FORMAT A25
+COLUMN total FORMAT 99999.99
+COLUMN metodo_pago FORMAT A20
+COLUMN estado FORMAT A15
+
+SELECT * FROM venta;
+
+DETALLE VENTA 
+SET LINESIZE 200
+SET PAGESIZE 50
+
+COLUMN id_detalle FORMAT 999
+COLUMN id_venta FORMAT 999
+COLUMN id_producto FORMAT 999
+COLUMN cantidad FORMAT 999
+COLUMN precio_unitario FORMAT 99999.99
+
+SELECT * FROM detalle_venta;
+
+
+
